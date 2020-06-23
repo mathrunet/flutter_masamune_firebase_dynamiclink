@@ -5,7 +5,7 @@ part of masamune.firebase.mobile;
 /// Execute the task with the [call()] method and wait for it to complete with await.
 ///
 /// The result is stored in the [data] property.
-class FunctionsTask extends Task {
+class FunctionsTask extends TaskUnit {
   static RegExp _regExp = RegExp("^[a-zA-Z0-9]+-[a-zA-Z0-9]+");
 
   /// Create a Completer that matches the class.
@@ -157,6 +157,7 @@ class FunctionsTask extends Task {
       } else {
         this.data = (await this._callable.call(data).timeout(timeout))?.data;
       }
+      Log.msg(this.data);
       this.done();
     } on TimeoutException catch (e) {
       this.timeout(e.toString());

@@ -5,7 +5,7 @@ part of masamune.firebase.mobile;
 /// First, specify protocol and region to initialize.
 ///
 /// Normally, you can use it without specifying it explicitly.
-class FirestoreFunctions extends Task {
+class FirestoreFunctions extends TaskUnit {
   /// Create a Completer that matches the class.
   ///
   /// Do not use from external class.
@@ -111,4 +111,8 @@ class FirestoreFunctions extends Task {
   }
 
   static const String _systemPath = "system://api/%s/%s";
+
+  /// Get the protocol of the path.
+  @override
+  String get protocol => "firestore";
 }
