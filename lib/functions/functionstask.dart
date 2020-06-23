@@ -157,7 +157,6 @@ class FunctionsTask extends TaskUnit {
       } else {
         this.data = (await this._callable.call(data).timeout(timeout))?.data;
       }
-      Log.msg(this.data);
       this.done();
     } on TimeoutException catch (e) {
       this.timeout(e.toString());
