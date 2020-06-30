@@ -81,7 +81,7 @@ class FirestoreFunctions extends TaskUnit {
   static Future<FirestoreFunctions> configure(
       {String protocol, String region, Duration timeout = Const.timeout}) {
     if (Config.isWeb) {
-      Log.msg("This platform is not supported.");
+      Log.error("This platform is not supported.");
       return Future.delayed(Duration.zero);
     }
     if (isEmpty(protocol)) protocol = "firestore";

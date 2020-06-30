@@ -71,7 +71,7 @@ class FirestoreMessaging extends TaskDocument<DataField>
   static Future<FirestoreMessaging> listen(
       {List<String> subscribe = const []}) {
     if (Config.isWeb) {
-      Log.msg("This platform is not supported.");
+      Log.error("This platform is not supported.");
       return Future.delayed(Duration.zero);
     }
     FirestoreMessaging document = PathMap.get<FirestoreMessaging>(_systemPath);

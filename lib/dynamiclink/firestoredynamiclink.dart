@@ -59,7 +59,7 @@ class FirestoreDynamicLink extends Task<Uri> implements ITask {
   /// The URI is acquired at the first start and in the application.
   static Future<FirestoreDynamicLink> listen() {
     if (Config.isWeb) {
-      Log.msg("This platform is not supported.");
+      Log.error("This platform is not supported.");
       return Future.delayed(Duration.zero);
     }
     FirestoreDynamicLink unit = PathMap.get<FirestoreDynamicLink>(_systemPath);
