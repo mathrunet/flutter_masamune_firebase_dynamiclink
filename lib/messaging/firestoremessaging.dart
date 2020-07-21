@@ -339,4 +339,9 @@ class FirestoreMessaging extends TaskDocument<DataField>
   }
 
   static Map<String, dynamic> _dataCache;
+
+  /// Update document data.
+  @override
+  Future<T> reload<T extends IDataDocument<IDataField>>() =>
+      Future.delayed(Duration.zero);
 }
