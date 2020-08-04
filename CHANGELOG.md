@@ -1,3 +1,7 @@
+## [0.3.1] - Update README (2020.08.04)
+
+* Separated Firebase messaging.
+
 ## [0.3.0] - Update README (2020.07.24)
 
 * Supports version upgrades of core and flutter.

@@ -212,7 +212,7 @@ packages:
     source: hosted
     version: "0.5.1"
   firebase_messaging:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: firebase_messaging
       url: "https://pub.dartlang.org"
