@@ -197,7 +197,15 @@ class FunctionsDocument extends TaskDocument<DataField>
     data?.forEach((key, value) {
       if (isEmpty(key) || value == null) return;
       if (!(value is Map)) return;
-      list.add(DataField(Paths.child(this.path, key.toString()), value));
+      if (value is DataField) {
+        String child = Paths.child(this.path, key.toString());
+        if (value.path == child)
+          list.add(value);
+        else
+          list.add(value.clone(path: child, isTemporary: false));
+      } else {
+        list.add(DataField(Paths.child(this.path, key.toString()), value));
+      }
     });
     return list;
   }
