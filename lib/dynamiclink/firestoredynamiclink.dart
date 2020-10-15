@@ -25,12 +25,12 @@ class FirestoreDynamicLink extends Task<Uri> implements ITask {
           isTemporary: isTemporary,
           group: this.group,
           order: this.order) as T;
-  Firebase get _app {
-    if (this.__app == null) this.__app = Firebase(this.protocol);
+  FirebaseCore get _app {
+    if (this.__app == null) this.__app = FirebaseCore(this.protocol);
     return this.__app;
   }
 
-  Firebase __app;
+  FirebaseCore __app;
   FirebaseDynamicLinks get _dynamicLink {
     if (this.__dynamicLink == null)
       this.__dynamicLink = FirebaseDynamicLinks.instance;
@@ -84,7 +84,7 @@ class FirestoreDynamicLink extends Task<Uri> implements ITask {
   static const String _systemPath = "system://firebasedynamiclink";
   void _constructListener() async {
     try {
-      if (this._app == null) this.__app = await Firebase.initialize();
+      if (this._app == null) this.__app = await FirebaseCore.initialize();
       if (this._dynamicLink == null)
         this.__dynamicLink = FirebaseDynamicLinks.instance;
       PendingDynamicLinkData data = await this._dynamicLink.getInitialLink();

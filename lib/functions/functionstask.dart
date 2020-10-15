@@ -29,12 +29,12 @@ class FunctionsTask extends TaskUnit {
           isTemporary: isTemporary,
           order: this.order,
           group: this.group) as T;
-  Firebase get _app {
-    if (this.__app == null) this.__app = Firebase(this.protocol);
+  FirebaseCore get _app {
+    if (this.__app == null) this.__app = FirebaseCore(this.protocol);
     return this.__app;
   }
 
-  Firebase __app;
+  FirebaseCore __app;
   FirestoreAuth get _auth {
     if (this.__auth == null) this.__auth = FirestoreAuth(this.protocol);
     return this.__auth;
@@ -139,7 +139,7 @@ class FunctionsTask extends TaskUnit {
 
   void _call(Map<String, dynamic> data, Duration timeout) async {
     try {
-      if (this._app == null) this.__app = await Firebase.initialize();
+      if (this._app == null) this.__app = await FirebaseCore.initialize();
       if (this._auth == null)
         this.__auth = await FirestoreAuth.signIn(protocol: this.protocol);
       if (this._functions == null) {

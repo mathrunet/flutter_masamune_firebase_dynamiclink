@@ -13,8 +13,9 @@ class FirestoreCrashlytics {
     // This is only to be used for confirming that reports are being
     // submitted as expected. It is not intended to be used for everyday
     // development.
-    Crashlytics.instance.enableInDevMode = Log.isDebugBuild;
+    FirebaseCrashlytics.instance
+        .setCrashlyticsCollectionEnabled(Log.isDebugBuild);
     // Pass all uncaught errors from the framework to Crashlytics.
-    FlutterError.onError = Crashlytics.instance.recordFlutterError;
+    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
   }
 }
