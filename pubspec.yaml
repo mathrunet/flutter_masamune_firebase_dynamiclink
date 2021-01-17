@@ -1,7 +1,7 @@
 name: masamune_firebase_mobile
 description: >-
   Module for supporting the Firebase/Firestore function of Masamune framework.
-version: 0.6.0
+version: 0.6.1
 homepage: https://mathru.net
 repository: https://github.com/mathrunet/flutter_masamune_firebase_mobile
 
