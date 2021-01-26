@@ -4,6 +4,10 @@ part of masamune.firebase.mobile;
 ///
 /// The URI is acquired at the first start and in the application.
 class FirestoreDynamicLink extends Task<Uri> implements ITask {
+  /// Navigator.
+  NavigatorState get navigator => this._navigator;
+  NavigatorState _navigator;
+
   /// Create a Completer that matches the class.
   ///
   /// Do not use from external class
@@ -57,14 +61,20 @@ class FirestoreDynamicLink extends Task<Uri> implements ITask {
   /// Get Dynamic Link.
   ///
   /// The URI is acquired at the first start and in the application.
-  static Future<FirestoreDynamicLink> listen() {
+  ///
+  /// [navigator]: Navigator to use
+  /// when performing screen transitions within a callback.
+  static Future<FirestoreDynamicLink> listen({NavigatorState navigator}) {
     if (Config.isWeb) {
       Log.error("This platform is not supported.");
       return Future.delayed(Duration.zero);
     }
     FirestoreDynamicLink unit = PathMap.get<FirestoreDynamicLink>(_systemPath);
-    if (unit != null) return unit.future;
-    unit = FirestoreDynamicLink._(path: _systemPath);
+    if (unit != null) {
+      if (navigator != unit.navigator) unit._navigator = navigator;
+      return unit.future;
+    }
+    unit = FirestoreDynamicLink._(path: _systemPath, navigator: navigator);
     unit._constructListener();
     return unit.future;
   }
@@ -72,10 +82,12 @@ class FirestoreDynamicLink extends Task<Uri> implements ITask {
   FirestoreDynamicLink._(
       {String path,
       dynamic value,
+      NavigatorState navigator,
       bool isTemporary = false,
       int group = 0,
       int order = 10})
-      : super(
+      : this._navigator = navigator,
+        super(
             path: path,
             value: value,
             isTemporary: isTemporary,
