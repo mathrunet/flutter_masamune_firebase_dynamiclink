@@ -1,31 +1,22 @@
-name: masamune_firebase_mobile
-description: >-
-  Module for supporting the Firebase/Firestore function of Masamune framework.
-version: 0.6.2+1
+name: masamune_firebase_dynamiclink
+description: Plugin to add Firebase DynamicLink to the Masamune framework.
+version: 0.8.0-nullsafety.1
 homepage: https://mathru.net
-repository: https://github.com/mathrunet/flutter_masamune_firebase_mobile
+repository: https://github.com/mathrunet/flutter_masamune_firebase_dynamiclink
 
 environment:
-  sdk: ">=2.8.0 <3.0.0"
+  sdk: ">=2.12.0-0 <3.0.0"
+  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  # Firebase
-  firebase_core: ^0.5.0
-  cloud_functions: ^0.6.0+1
-  firebase_dynamic_links: ^0.6.0+2
-  firebase_remote_config: ^0.4.0+2
-  firebase_crashlytics: ^0.2.1+1
-  firebase_performance: ^0.4.0+2
-  firebase_analytics: ^6.0.2
-  # Masamune
-  masamune: ^0.6.0
-  masamune_core: ^0.6.0
-  masamune_mobile: ^0.6.0
-  masamune_localize: ^0.6.0
-  masamune_flutter: ^0.6.0
-  masamune_firebase: ^0.6.0
+
+  masamune: ^0.8.0-nullsafety
+  masamune_mobile: ^0.8.0-nullsafety
+  masamune_firebase: ^0.8.0-nullsafety
+  firebase_model_notifier: ^0.8.0-nullsafety
+  firebase_dynamic_links: ^0.8.0
 
 dev_dependencies:
   flutter_test:
@@ -33,18 +24,6 @@ dev_dependencies:
   # Masamune
   masamune_test: ^0.5.0
   
-# dependency_overrides:
-#   masamune_core:
-#     path: ../masamune_core/
-#   masamune_mobile:
-#     path: ../masamune_mobile/
-#   masamune_localize:
-#     path: ../masamune_localize/
-#   masamune_firebase:
-#     path: ../masamune_firebase/
-#   masamune_flutter:
-#     path: ../masamune_flutter/
-
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

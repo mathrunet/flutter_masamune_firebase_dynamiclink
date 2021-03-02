@@ -1,4 +1,16 @@
-part of masamune.firebase.mobile;
+part of masamune_firebase_dynamiclink;
+
+final firebaseDynamicLinkProvider =
+    ModelProvider((_) => FirebaseDynamicLinkModel());
+
+class FirebaseDynamicLinkModel extends Model<User?> {
+  FirebaseDynamicLinkModel() : super();
+
+  @protected
+  FirebaseAuth get auth {
+    return FirebaseAuth.instance;
+  }
+}
 
 /// Get Dynamic Link.
 ///

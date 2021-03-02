@@ -1,38 +1,26 @@
-# Masamune firebase / firestore framework for mobile
+# Masamune for firebase dynamic link
 
-Module for supporting the Firebase/Firestore function of Masamune framework.
-
-[![Version](https://img.shields.io/badge/version-0.1.4-blue.svg)](https://mathru.net)
+[![Version](https://img.shields.io/badge/version-0.8.0-blue.svg)](https://mathru.net)
 [![Language](https://img.shields.io/badge/language-dart-blue.svg)](https://dart.dev/)
 [![License: BSD](https://img.shields.io/badge/license-BSD-purple.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
+---------------------------------------
+
+Plugin to add Firebase DynamicLink to the Masamune framework.
 
 ## Getting Started
 
 Add this to your package's pubspec.yaml file:
 ```yaml
 dependencies:
-  masamune_firebase_mobile: ^0.1.0
+  masamune: ^0.8.0-nullsafety
 ```
-You should then run `flutter packages upgrade`.
+You should then run `flutter pub upgrade`.
 
 ## Usage
 
 ```yaml
-import 'package:masamune_firebase_mobile/masamune_firebase_mobile.dart';
-```
-
-## Example
-
-Use PageRouteBuilder Widget
-```dart
-Under construction
-```
-
-## Test
-
-run test
-```bash
-flutter test
+import 'package:masamune_firebase_dynamiclink/masamune_firebase_dynamiclink.dart';
 ```
 
 ## License
